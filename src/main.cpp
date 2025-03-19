@@ -1,6 +1,9 @@
 #include "riscv_sim.hpp"
 #include <iostream>
 
+
+// works until 9x9 multiplications....
+
 int main(int argc, char** argv) {
     if(argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <assembly-file>\n";
