@@ -1,3 +1,14 @@
+# Installing the RISCV - 64 Toolchain (as of May 2025 installation needs to be done after modifying 2 files...):
+- git clone https://github.com/riscv-collab/riscv-gnu-toolchain.git (Note: do not use --recursive while cloning)
+- After cloning this in the root directory go to .gitmodules then search for shallow=True and remove all instances.
+- Then go to Makefile.in in the root directory and remove --depth=1 flag
+- Then proceed with usual installation steps as directed on the repository Readme.
+
+# Adding an Instruction in your toolchain ISA:
+- Follow the steps in this link, it mentions all the steps required:
+    - link: https://pcotret.gitlab.io/riscv-custom/sw_toolchain.html#
+
+
 # RV64IM Minimal Emulator
 
 Bare-metal RISC-V 64-bit interpreter in vanilla C++ 
@@ -39,6 +50,6 @@ riscv64-unknown-elf-ld -T tests/linker.ld -o tests/mm.elf start.o matrix_mul.o
 
 ./build/rve tests/mm.elf
 
-## 3 Ways to change cycle benchmarking:
-# ```for bench.sh in bash
+# 3 Ways to change cycle benchmarking:
+ ```for bench.sh in bash
 for n in 0 2 4 6 8; do ./bench.sh $n; done

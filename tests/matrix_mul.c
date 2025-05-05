@@ -1,6 +1,10 @@
+#ifndef N
+#define N 4
+#endif
+
+
 #include <stdint.h>
 
-#define N 4
 volatile int64_t A[N][N] = {{1,2,3,4},{5,6,7,8},{9,8,7,6},{5,4,3,2}};
 volatile int64_t B[N][N] = {{4,3,2,1},{8,7,6,5},{12,11,10,9},{16,15,14,13}};
 volatile int64_t C[N][N];
